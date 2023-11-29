@@ -7,6 +7,9 @@
 import SwiftUI
 
 struct AddEditNoteView: View {
+    
+    @Environment(\.presentationMode) private var presentationMode
+    @Binding var isPresented: Bool
     @ObservedObject var noteViewModel: NotesViewModel
     @Binding var selectedNote: NoteData?
     @State private var title = ""
@@ -22,10 +25,13 @@ struct AddEditNoteView: View {
                     Button("Save") {
                         if let note = selectedNote {
                             // Edit existing note
+                            isPresented = false
                             noteViewModel.editNote(note: note, title: title, content: content)
                         } else {
                             // Add new note
                             noteViewModel.addNote(title: title, notes: content)
+                            isPresented = false
+
                         }
                         
                         // Close the sheet
@@ -34,6 +40,9 @@ struct AddEditNoteView: View {
                 }
             }
             .navigationTitle(selectedNote != nil ? "Edit Note" : "Add Note")
+            .navigationBarItems(trailing: Button("Cancel") {
+                            isPresented = false
+                        })
         }
         .onAppear {
             // Populate fields if editing an existing note

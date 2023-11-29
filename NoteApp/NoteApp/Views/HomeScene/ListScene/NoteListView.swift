@@ -7,6 +7,7 @@
 import SwiftUI
 
 struct NoteListView: View {
+    @State private var isPresented = false
     @ObservedObject private var noteViewModel = NotesViewModel()
     @State private var isAddNoteSheetPresented = false
     @State private var selectedNote: NoteData? // Used for editing
@@ -32,6 +33,7 @@ struct NoteListView: View {
             .navigationBarItems(trailing:
                                     Button(action: {
                 isAddNoteSheetPresented = true
+                isPresented.toggle()
             }) {
                 Image(systemName: "plus")
             }
@@ -40,7 +42,7 @@ struct NoteListView: View {
             
             // Add and Edit Note Sheet
             .sheet(isPresented: $isAddNoteSheetPresented) {
-                AddEditNoteView(noteViewModel: noteViewModel, selectedNote: $selectedNote)
+                AddEditNoteView(isPresented: $isAddNoteSheetPresented, noteViewModel: noteViewModel, selectedNote: $selectedNote)
             }
             
             // Delete Note Alert
