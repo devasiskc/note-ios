@@ -26,6 +26,7 @@ class NotesViewModel: ObservableObject {
     func fetchNotes()  {
         do {
             notes = try context.fetch(NoteData.fetchRequest())
+            notes.reverse()
         } catch {
             print("Error fetching notes: \(error)")
         }
@@ -37,15 +38,16 @@ class NotesViewModel: ObservableObject {
         newNote.content = notes
         
         do {
-            try context.save()
-            fetchNotes()
+            if !notes.isEmpty && !notes.containsWhitespace {
+                try context.save()
+                fetchNotes()
+            }
         } catch {
             print("Error saving note: \(error)")
         }
     }
     
     func editNote(note: NoteData, title: String, content: String) {
-        note.title = title
         note.content = content
         
         do {

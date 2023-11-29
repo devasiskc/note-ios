@@ -24,6 +24,7 @@
 		188FE5502B17390A00D4D3DE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188FE54F2B17390A00D4D3DE /* LoginViewModel.swift */; };
 		188FE5522B174F0200D4D3DE /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188FE5512B174F0200D4D3DE /* LoginViewModelTests.swift */; };
 		188FE5542B17508000D4D3DE /* NotesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188FE5532B17507F00D4D3DE /* NotesViewModelTests.swift */; };
+		188FE5572B175DC800D4D3DE /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188FE5562B175DC800D4D3DE /* String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		188FE54F2B17390A00D4D3DE /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		188FE5512B174F0200D4D3DE /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		188FE5532B17507F00D4D3DE /* NotesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewModelTests.swift; sourceTree = "<group>"; };
+		188FE5562B175DC800D4D3DE /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 		181352DF2B1579B200D26443 /* NoteApp */ = {
 			isa = PBXGroup;
 			children = (
+				188FE5552B175DB200D4D3DE /* Extension */,
 				181353112B157D0900D26443 /* Model */,
 				181353132B157D1500D26443 /* ViewModel */,
 				181353122B157D0F00D26443 /* Views */,
@@ -225,6 +228,14 @@
 				188FE54D2B16FDE000D4D3DE /* AddEditNoteView.swift */,
 			);
 			path = AddEditScene;
+			sourceTree = "<group>";
+		};
+		188FE5552B175DB200D4D3DE /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				188FE5562B175DC800D4D3DE /* String.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,6 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				181353192B157F7800D26443 /* LoginView.swift in Sources */,
+				188FE5572B175DC800D4D3DE /* String.swift in Sources */,
 				188FE5502B17390A00D4D3DE /* LoginViewModel.swift in Sources */,
 				181352EA2B1579B300D26443 /* Persistence.swift in Sources */,
 				183375BC2B15FBD400137952 /* MyNotes.xcdatamodeld in Sources */,

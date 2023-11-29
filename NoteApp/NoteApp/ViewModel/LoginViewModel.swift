@@ -8,7 +8,9 @@
 import SwiftUI
 
 class LoginViewModel: ObservableObject {
-    @Published var isLoggedIn = false
+    @AppStorage("isLoggedIn") var isLoggedIn = false
+    @Published var showAlert = false
+
 
     //dummy users mock data...
     private let users: [User] = [
@@ -23,8 +25,13 @@ class LoginViewModel: ObservableObject {
         if let user = users.first(where: { $0.username == username && $0.password == password }) {
             if user.status.lowercased() == "true" {
                 isLoggedIn = true
+                showAlert = true
             }
         }
+    }
+    
+    func logout() {
+        isLoggedIn = false
     }
     
 }

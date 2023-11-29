@@ -36,6 +36,7 @@ struct NoteListView: View {
             }) {
                 Image(systemName: "plus")
             }
+                                
             )
             .navigationBarTitle("Notes")
             
