@@ -20,10 +20,10 @@
 		181353212B15917400D26443 /* NoteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181353202B15917400D26443 /* NoteListView.swift */; };
 		181353232B15928E00D26443 /* NotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181353222B15928E00D26443 /* NotesViewModel.swift */; };
 		183375BC2B15FBD400137952 /* MyNotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 183375BA2B15FBD400137952 /* MyNotes.xcdatamodeld */; };
-		188FE54B2B16F80F00D4D3DE /* DeleteNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188FE54A2B16F80F00D4D3DE /* DeleteNoteViewModel.swift */; };
 		188FE54E2B16FDE000D4D3DE /* AddEditNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188FE54D2B16FDE000D4D3DE /* AddEditNoteView.swift */; };
 		188FE5502B17390A00D4D3DE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188FE54F2B17390A00D4D3DE /* LoginViewModel.swift */; };
 		188FE5522B174F0200D4D3DE /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188FE5512B174F0200D4D3DE /* LoginViewModelTests.swift */; };
+		188FE5542B17508000D4D3DE /* NotesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188FE5532B17507F00D4D3DE /* NotesViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,10 +63,10 @@
 		181353222B15928E00D26443 /* NotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewModel.swift; sourceTree = "<group>"; };
 		183375B72B15EA8C00137952 /* NoteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteData.swift; sourceTree = "<group>"; };
 		183375BB2B15FBD400137952 /* MyNotes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyNotes.xcdatamodel; sourceTree = "<group>"; };
-		188FE54A2B16F80F00D4D3DE /* DeleteNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteNoteViewModel.swift; sourceTree = "<group>"; };
 		188FE54D2B16FDE000D4D3DE /* AddEditNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditNoteView.swift; sourceTree = "<group>"; };
 		188FE54F2B17390A00D4D3DE /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		188FE5512B174F0200D4D3DE /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
+		188FE5532B17507F00D4D3DE /* NotesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +144,7 @@
 			children = (
 				181352F82B1579B300D26443 /* NoteAppTests.swift */,
 				188FE5512B174F0200D4D3DE /* LoginViewModelTests.swift */,
+				188FE5532B17507F00D4D3DE /* NotesViewModelTests.swift */,
 			);
 			path = NoteAppTests;
 			sourceTree = "<group>";
@@ -179,7 +180,6 @@
 			isa = PBXGroup;
 			children = (
 				181353222B15928E00D26443 /* NotesViewModel.swift */,
-				188FE54A2B16F80F00D4D3DE /* DeleteNoteViewModel.swift */,
 				188FE54F2B17390A00D4D3DE /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
@@ -357,7 +357,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				188FE54B2B16F80F00D4D3DE /* DeleteNoteViewModel.swift in Sources */,
 				181353192B157F7800D26443 /* LoginView.swift in Sources */,
 				188FE5502B17390A00D4D3DE /* LoginViewModel.swift in Sources */,
 				181352EA2B1579B300D26443 /* Persistence.swift in Sources */,
@@ -377,6 +376,7 @@
 			files = (
 				188FE5522B174F0200D4D3DE /* LoginViewModelTests.swift in Sources */,
 				181352F92B1579B300D26443 /* NoteAppTests.swift in Sources */,
+				188FE5542B17508000D4D3DE /* NotesViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,7 +11,6 @@ struct NoteListView: View {
     @ObservedObject private var noteViewModel = NotesViewModel()
     @State private var isAddNoteSheetPresented = false
     @State private var selectedNote: NoteData? // Used for editing
-    @StateObject private var deleteNoteViewModel = DeleteNoteViewModel()
     
     var body: some View {
         NavigationView {

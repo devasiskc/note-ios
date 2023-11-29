@@ -12,13 +12,13 @@ import SwiftUI
 @MainActor
 class NotesViewModel: ObservableObject {
     
-    private let context = PersistenceController.shared.container.viewContext
+    public var context = PersistenceController.shared.container.viewContext
     @Published public var notes: [NoteData] = []
     @Published var isNavigationActive = false
     @Published var isDeleteAlertPresented = false
     var noteToDelete: NoteData?
-
-   
+    
+    
     init()  {
         fetchNotes()
     }
@@ -67,10 +67,5 @@ class NotesViewModel: ObservableObject {
         noteToDelete = nil
         isDeleteAlertPresented = false
     }
-    
-    func getAllNotes() -> [NoteData] {
-        return notes
-    }
-    
 }
 
