@@ -9,8 +9,13 @@ import SwiftUI
 struct NoteListView: View {
     @State private var isPresented = false
     @ObservedObject private var noteViewModel = NotesViewModel()
+    @ObservedObject private var loginViewModel: LoginViewModel
     @State private var isAddNoteSheetPresented = false
     @State private var selectedNote: NoteData? // Used for editing
+    
+    init(loginViewModel: LoginViewModel) {
+        self.loginViewModel = loginViewModel
+    }
     
     var body: some View {
         NavigationView {
@@ -29,7 +34,15 @@ struct NoteListView: View {
                         }
                 }
             }
-            .navigationBarItems(trailing:
+            .navigationBarItems(leading:
+                                    HStack {
+                
+                Button("Log out") {
+                    loginViewModel.logout()
+                }
+            },
+                                
+                                trailing:
                                     Button(action: {
                 isAddNoteSheetPresented = true
                 isPresented.toggle()
