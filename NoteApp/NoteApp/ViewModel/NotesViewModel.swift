@@ -33,12 +33,11 @@ class NotesViewModel: ObservableObject {
     }
     
     func addNote(title: String, notes: String) {
-        let newNote = NoteData(context: context)
-        newNote.title = title
-        newNote.content = notes
-        
         do {
             if !notes.isEmpty && !notes.containsWhitespace {
+                let newNote = NoteData(context: context)
+                newNote.title = title
+                newNote.content = notes
                 try context.save()
                 fetchNotes()
             }
@@ -51,7 +50,7 @@ class NotesViewModel: ObservableObject {
         note.content = content
         
         do {
-            try  context.save()
+            try context.save()
             fetchNotes()
         } catch {
             print("Error editing note: \(error)")
