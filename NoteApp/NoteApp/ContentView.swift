@@ -9,17 +9,15 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    @ObservedObject var notesViewModel = NotesViewModel()
+    @ObservedObject var loginViewModel = LoginViewModel()
     
     var body: some View {
-        NavigationView {
-            if notesViewModel.isLoggedIn {
+            if loginViewModel.isLoggedIn {
                 NoteListView()
             } else {
-                LoginView(viewModel: NotesViewModel())
+                LoginView(viewModel: self.loginViewModel)
                 
             }
-        }
     }
 }
 

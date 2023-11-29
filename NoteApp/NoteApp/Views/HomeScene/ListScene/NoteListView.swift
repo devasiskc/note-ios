@@ -2,7 +2,7 @@
 //  NoteView.swift
 //  NoteApp
 //
-//  Created by Neela Rai on 28/11/2023.
+//  Created by Devasis Kc on 28/11/2023.
 //
 import SwiftUI
 
@@ -23,8 +23,8 @@ struct NoteListView: View {
                         }
                         .contextMenu {
                             Button("Delete") {
-                                deleteNoteViewModel.noteToDelete = note
-                                deleteNoteViewModel.isDeleteAlertPresented = true
+                                noteViewModel.noteToDelete = note
+                                noteViewModel.isDeleteAlertPresented = true
                             }
                         }
                 }
@@ -44,12 +44,12 @@ struct NoteListView: View {
             }
             
             // Delete Note Alert
-            .alert(isPresented: $deleteNoteViewModel.isDeleteAlertPresented) {
+            .alert(isPresented: $noteViewModel.isDeleteAlertPresented) {
                 Alert(
                     title: Text("Confirm Delete"),
                     message: Text("Are you sure you want to delete this note?"),
                     primaryButton: .destructive(Text("Delete")) {
-                        deleteNoteViewModel.deleteNote()
+                        noteViewModel.deleteNote()
                     },
                     secondaryButton: .cancel()
                 )

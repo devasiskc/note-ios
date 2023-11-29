@@ -14,25 +14,13 @@ class NotesViewModel: ObservableObject {
     
     private let context = PersistenceController.shared.container.viewContext
     @Published public var notes: [NoteData] = []
-    @Published var isLoggedIn: Bool = false
-    private let users: [User] = [
-        User(username: "john01", password: "AB01@1", status: "false"),
-        User(username: "mike_", password: "20Mike", status: "true"),
-        User(username: "nikita", password: "ZoPW_98", status: "false"),
-        User(username: "test", password: "test2@", status: "true")
-    ]
-    
+    @Published var isNavigationActive = false
+    @Published var isDeleteAlertPresented = false
+    var noteToDelete: NoteData?
+
+   
     init()  {
         fetchNotes()
-    }
-    
-    //MARK: Login async function
-    func login(username: String, password: String) {
-        if let user = users.first(where: { $0.username == username && $0.password == password }) {
-            if user.status.lowercased() == "true" {
-                isLoggedIn = true
-            }
-        }
     }
     
     func fetchNotes()  {
@@ -66,6 +54,18 @@ class NotesViewModel: ObservableObject {
         } catch {
             print("Error editing note: \(error)")
         }
+    }
+    
+    func deleteNote() {
+        if let note = noteToDelete {
+            PersistenceController.shared.viewContext.delete(note)
+            PersistenceController.shared.save()
+            fetchNotes()
+            
+        }
+        // Reset noteToDelete and hide the alert
+        noteToDelete = nil
+        isDeleteAlertPresented = false
     }
     
     func getAllNotes() -> [NoteData] {

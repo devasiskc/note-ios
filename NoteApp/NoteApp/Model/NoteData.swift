@@ -11,5 +11,4 @@ import CoreData
 public class NoteData: NSManagedObject {
     @NSManaged public var title: String?
     @NSManaged public var content: String?
-    @NSManaged public var id: UUID = UUID()
 }

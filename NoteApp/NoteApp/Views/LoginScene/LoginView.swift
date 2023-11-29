@@ -8,16 +8,19 @@
 import SwiftUI
 
 struct LoginView: View {
-    @ObservedObject var viewModel: NotesViewModel
+    @ObservedObject private var loginViewModel: LoginViewModel
     @State private var username: String = ""
     @State private var password: String = ""
     @State private var isValidationAlertPresented = false
     @State private var showAlert = false
     @State private var alertMessage = ""
-    
+    @State private var isNavigationActive = false
+
+    init(viewModel: LoginViewModel) {
+        self.loginViewModel = viewModel
+    }
     
     var body: some View {
-        NavigationView {
             VStack {
                 Label("Welcome to your Notes", systemImage: "heart.fill")
                 
@@ -35,14 +38,8 @@ struct LoginView: View {
                 
                 HStack {
                     Button("Login") {
-                        viewModel.login(username: username, password: password)
-                        if viewModel.isLoggedIn {
-                            // Navigate to NoteView upon successful login
-                            NavigationLink(destination: NoteListView()) {
-                                EmptyView()
-                            }
-                            .hidden()
-                        }
+                    loginViewModel.login(username: username, password: password)
+                       
                     }
                     .padding()
                     .frame(maxWidth: .infinity)
@@ -69,8 +66,7 @@ struct LoginView: View {
                 
                 Spacer()
             }
-            .padding()
-        }
+        .padding()
     }
     
     private func login() {
@@ -93,5 +89,5 @@ struct LoginView: View {
 }
 
 #Preview {
-    LoginView(viewModel: NotesViewModel())
+    LoginView(viewModel: LoginViewModel())
 }

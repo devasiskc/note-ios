@@ -22,6 +22,7 @@
 		183375BC2B15FBD400137952 /* MyNotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 183375BA2B15FBD400137952 /* MyNotes.xcdatamodeld */; };
 		188FE54B2B16F80F00D4D3DE /* DeleteNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188FE54A2B16F80F00D4D3DE /* DeleteNoteViewModel.swift */; };
 		188FE54E2B16FDE000D4D3DE /* AddEditNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188FE54D2B16FDE000D4D3DE /* AddEditNoteView.swift */; };
+		188FE5502B17390A00D4D3DE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188FE54F2B17390A00D4D3DE /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		183375BB2B15FBD400137952 /* MyNotes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyNotes.xcdatamodel; sourceTree = "<group>"; };
 		188FE54A2B16F80F00D4D3DE /* DeleteNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteNoteViewModel.swift; sourceTree = "<group>"; };
 		188FE54D2B16FDE000D4D3DE /* AddEditNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditNoteView.swift; sourceTree = "<group>"; };
+		188FE54F2B17390A00D4D3DE /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 			children = (
 				181353222B15928E00D26443 /* NotesViewModel.swift */,
 				188FE54A2B16F80F00D4D3DE /* DeleteNoteViewModel.swift */,
+				188FE54F2B17390A00D4D3DE /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 			files = (
 				188FE54B2B16F80F00D4D3DE /* DeleteNoteViewModel.swift in Sources */,
 				181353192B157F7800D26443 /* LoginView.swift in Sources */,
+				188FE5502B17390A00D4D3DE /* LoginViewModel.swift in Sources */,
 				181352EA2B1579B300D26443 /* Persistence.swift in Sources */,
 				183375BC2B15FBD400137952 /* MyNotes.xcdatamodeld in Sources */,
 				181352E32B1579B200D26443 /* ContentView.swift in Sources */,
