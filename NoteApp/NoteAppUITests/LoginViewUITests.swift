@@ -33,6 +33,7 @@ class LoginViewUITests: XCTestCase {
         // Tap the login button
         loginButton.tap()
         
+        XCUIApplication().buttons["Login"].tap()
     }
 
     func testLoginFailure() throws {
