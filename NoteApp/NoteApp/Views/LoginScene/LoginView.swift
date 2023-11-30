@@ -62,27 +62,9 @@ struct LoginView: View {
                     .foregroundColor(.red)
                     .padding(.horizontal)
             }
-        
+            
         }
         .padding()
-    }
-    
-    private func login() {
-        // Perform actual login logic (validate username and password)
-        let isValid = validateLogin()
-        
-        // Show alert based on login status
-        showAlert = true
-        alertMessage = isValid ? "Login Successful" : "Login Failed"
-    }
-    
-    private func validateLogin() -> Bool {
-        // Replace this logic with your actual validation
-        return username == "$username" && password == "$password"
-    }
-    func isInputValid() -> Bool {
-        // Perform your validation logic here
-        return !username.isEmpty && !password.isEmpty
     }
 }
 
